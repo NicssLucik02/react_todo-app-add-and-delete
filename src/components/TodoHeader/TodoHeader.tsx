@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 type Props = {
-  quantityActiveTasks: () => number;
+  quantityActiveTasks: number;
   handleSearchQuery: (event: React.ChangeEvent<HTMLInputElement>) => void;
   searchQuery: string | '';
   inputRef: React.RefObject<HTMLInputElement>;
@@ -27,7 +27,7 @@ export const TodoHeader: React.FC<Props> = ({
       <button
         type="button"
         className={classNames('todoapp__toggle-all', {
-          active: quantityActiveTasks() === 0,
+          active: quantityActiveTasks === 0,
         })}
         data-cy="ToggleAllButton"
       />
